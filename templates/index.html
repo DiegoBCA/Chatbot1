@@ -15,7 +15,6 @@
         align-items: center;
         height: 100vh;
       }
-
       section {
         display: none;
         width: 90%;
@@ -26,27 +25,23 @@
         overflow: hidden;
         position: relative;
       }
-
       #login-section {
         padding: 20px;
         text-align: center;
       }
-
       .login-header {
         color: #ff7300;
         font-size: 24px;
         margin-bottom: 20px;
       }
-
       .login-input {
-        width: 100%;
+        width: 95%;
         padding: 10px;
         margin: 10px 0;
         border: 1px solid #ddd;
         border-radius: 5px;
         font-size: 16px;
       }
-
       .login-button {
         width: 100%;
         padding: 10px;
@@ -57,11 +52,9 @@
         font-size: 16px;
         cursor: pointer;
       }
-
       .login-button:hover {
         background-color: #ff9100;
       }
-
       #chat-section {
         display: flex;
         flex-direction: column;
@@ -74,7 +67,6 @@
         overflow: hidden;
         position: relative;
       }
-
       .chat-header {
         background-color: #ff7300;
         color: rgb(250, 246, 246);
@@ -86,7 +78,6 @@
         align-items: center;
         position: relative;
       }
-
       .menu-button {
         background: none;
         border: none;
@@ -95,7 +86,6 @@
         cursor: pointer;
         padding: 5px;
       }
-
       .menu-dropdown {
         position: absolute;
         top: 50px;
@@ -107,11 +97,9 @@
         z-index: 1;
         width: 200px;
       }
-
       .menu-dropdown.show {
         display: block;
       }
-
       .menu-dropdown button {
         width: 100%;
         padding: 12px;
@@ -121,21 +109,17 @@
         cursor: pointer;
         font-size: 16px;
       }
-
       .menu-dropdown button:hover {
         background-color: #f0f0f0;
       }
-
       .chat-messages {
         flex: 1;
         padding: 15px;
         overflow-y: auto;
         background-color: #f9f9f9;
-        height: calc(
-          100% - 120px
-        ); /* Ajuste para el área de entrada y el encabezado */
+        height: calc(100% - 150px); /* Ajusta según el header + input */
+        box-sizing: border-box;
       }
-
       .message {
         margin-bottom: 10px;
         padding: 10px 15px;
@@ -144,21 +128,18 @@
         word-wrap: break-word;
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
       }
-
       .user-message {
         background-color: #ff9100;
         color: white;
         margin-left: auto;
         border-bottom-right-radius: 5px;
       }
-
       .bot-message {
         background-color: #e5e5ea;
         color: black;
         margin-right: auto;
         border-bottom-left-radius: 5px;
       }
-
       .chat-input {
         position: absolute;
         bottom: 0;
@@ -167,21 +148,19 @@
         display: flex;
         padding: 10px;
         background-color: white;
-        border-top: 3px solid #ddd;
+        border-top: 1px solid #ddd;
         width: 100%;
         box-sizing: border-box;
-        height: 60px; /* Altura fija para el área de entrada */
+        height: 60px;
       }
-
       #message-input {
         flex: 1;
         padding: 10px 15px;
-        border: 3px solid #ff9900;
+        border: 2px solid #ff9900;
         border-radius: 20px;
-        font-size: 15px;
+        font-size: 16px;
         outline: none;
       }
-
       #send-button {
         background-color: #ffae00;
         color: white;
@@ -194,22 +173,18 @@
         cursor: pointer;
         outline: none;
       }
-
       #send-button:active {
         background-color: #ffbb00;
       }
-
       #help-section {
         padding: 20px;
       }
-
       .help-header {
         color: #ff7300;
         font-size: 20px;
         margin-bottom: 20px;
         text-align: center;
       }
-
       .help-question {
         margin-bottom: 10px;
         padding: 10px;
@@ -217,11 +192,9 @@
         border-radius: 5px;
         cursor: pointer;
       }
-
       .help-question:hover {
         background-color: #e5e5ea;
       }
-
       .back-button {
         width: 100%;
         padding: 10px;
@@ -233,28 +206,23 @@
         cursor: pointer;
         margin-top: 20px;
       }
-
       #settings-section {
         padding: 20px;
       }
-
       .settings-header {
         color: #ff7300;
         font-size: 20px;
         margin-bottom: 20px;
         text-align: center;
       }
-
       .setting-option {
         margin-bottom: 15px;
       }
-
       .setting-option label {
         display: block;
         margin-bottom: 5px;
         font-weight: bold;
       }
-
       .setting-option select,
       .setting-option input {
         width: 100%;
@@ -263,20 +231,31 @@
         border-radius: 5px;
       }
 
-      .save-button {
-        width: 100%;
-        padding: 10px;
-        background-color: #ff7300;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-        margin-top: 20px;
+      /* === MODO OSCURO EN ESCALA DE GRISES === */
+      body.dark-theme {
+        background-color: #1e1e1e;
+        color: #f0f0f0;
+        filter: grayscale(100%);
       }
 
-      .save-button:hover {
-        background-color: #ff9100;
+      body.dark-theme section {
+        background-color: #2a2a2a;
+        color: #e0e0e0;
+      }
+
+      body.dark-theme .chat-header {
+        background-color: #444;
+        color: #f0f0f0;
+      }
+
+      body.dark-theme .user-message {
+        background-color: #666;
+        color: #fff;
+      }
+
+      body.dark-theme .bot-message {
+        background-color: #888;
+        color: #fff;
       }
     </style>
   </head>
@@ -313,14 +292,14 @@
       </div>
       <div class="chat-messages" id="chat-messages">
         <div class="message bot-message">
-          Bienvenido azteca, ¿cómo puedo ayudarte hoy?
-        </div>
-        <div class="message bot-message">¿Qué puedo hacer?</div>
-        <div class="message bot-message">
-          ¿Te gustaría saber de alguna materia en específico?
-        </div>
-        <div class="message bot-message">
-          ¿No sabes qué materias debes llevar?
+          ¡Hola! Soy AztecaBot 👋, tu asistente para la carrera de Negocios
+          Internacionales en la UDLAP.<br />
+          Puedo ayudarte con:<br />
+          - Materias y plan de estudios 📚<br />
+          - Profesores y contactos 🧑‍🏫<br />
+          - Prácticas profesionales 💼<br />
+          - Calendario y eventos 🗓️<br />
+          Ejemplo: ¿Qué materias se toman en quinto semestre?
         </div>
       </div>
       <div class="chat-input">
@@ -359,20 +338,12 @@
         </select>
       </div>
       <div class="setting-option">
-        <label for="notifications">Notificaciones:</label>
-        <select id="notifications">
-          <option value="on">Activadas</option>
-          <option value="off">Desactivadas</option>
-        </select>
-      </div>
-      <div class="setting-option">
         <label for="language">Idioma:</label>
         <select id="language">
           <option value="es">Español</option>
           <option value="en">Inglés</option>
         </select>
       </div>
-      <button class="save-button" id="save-button">Guardar</button>
       <button class="back-button" id="back-to-chat-button">
         Volver al Chat
       </button>
@@ -382,7 +353,7 @@
       document.addEventListener("DOMContentLoaded", function () {
         showSection("login-section");
 
-        // Iniciar sesión
+        // --- LOGIN ---
         document
           .getElementById("login-button")
           .addEventListener("click", function () {
@@ -395,25 +366,77 @@
             }
           });
 
-        // Mostrar/ocultar menú desplegable
+        // --- MENÚ ---
         const menuButton = document.getElementById("menu-button");
         const menuDropdown = document.getElementById("menu-dropdown");
         menuButton.addEventListener("click", function () {
           menuDropdown.classList.toggle("show");
         });
 
-        // Función para añadir un mensaje al chat
+        // --- FUNCIONES GLOBALES ---
         function addMessage(text, isUser) {
           const chatMessages = document.getElementById("chat-messages");
           const messageDiv = document.createElement("div");
           messageDiv.classList.add("message");
           messageDiv.classList.add(isUser ? "user-message" : "bot-message");
-          messageDiv.textContent = text;
+          messageDiv.innerHTML = text.replace(/\n/g, "<br>");
           chatMessages.appendChild(messageDiv);
           chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        // Enviar mensaje al hacer clic en el botón
+        async function sendMessageToBackend(message) {
+          const chatMessages = document.getElementById("chat-messages");
+
+          const lanValue = document.getElementById("language").value;
+
+          // --- Crear mensaje temporal ---
+          const tempMessageDiv = document.createElement("div");
+          tempMessageDiv.classList.add("message", "bot-message");
+
+          if (lanValue === "es") {
+            tempMessageDiv.innerHTML = "⏳ Procesando tu pregunta...";
+          } else {
+            tempMessageDiv.innerHTML = "⏳ Processing your question...";
+          }
+
+          chatMessages.appendChild(tempMessageDiv);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+
+          try {
+            const res = await fetch("/chat", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                message,
+                language: lanValue,
+              }),
+            });
+            const data = await res.json();
+
+            // --- Reemplazar mensaje temporal con la respuesta real ---
+            tempMessageDiv.innerHTML = data.response.replace(/\n/g, "<br>");
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+          } catch (error) {
+            if (lanValue === "es") {
+              tempMessageDiv.innerHTML =
+                "⚠️ Error al conectar con el servidor.";
+            } else {
+              tempMessageDiv.innerHTML = "⚠️ Error connecting to the server.";
+            }
+
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+          }
+        }
+
+        function showSection(sectionId) {
+          const sections = document.querySelectorAll("section");
+          sections.forEach((section) => {
+            section.style.display = "none";
+          });
+          document.getElementById(sectionId).style.display = "block";
+        }
+
+        // --- ENVÍO DE MENSAJES ---
         document
           .getElementById("send-button")
           .addEventListener("click", function () {
@@ -422,16 +445,10 @@
             if (message) {
               addMessage(message, true);
               messageInput.value = "";
-              setTimeout(() => {
-                addMessage(
-                  "Gracias por tu mensaje. ¿En qué más puedo ayudarte?",
-                  false
-                );
-              }, 1000);
+              sendMessageToBackend(message);
             }
           });
 
-        // Enviar mensaje al presionar Enter
         document
           .getElementById("message-input")
           .addEventListener("keypress", function (e) {
@@ -440,26 +457,46 @@
               if (message) {
                 addMessage(message, true);
                 this.value = "";
-                setTimeout(() => {
-                  addMessage(
-                    "Gracias por tu mensaje. ¿En qué más puedo ayudarte?",
-                    false
-                  );
-                }, 1000);
+                sendMessageToBackend(message);
               }
             }
           });
 
-        // Vaciar chat
+        // --- MENÚ: LIMPIAR CHAT ---
         document
           .getElementById("clear-chat-button")
           .addEventListener("click", function () {
             document.getElementById("chat-messages").innerHTML = "";
-            addMessage("Chat vaciado. ¿En qué puedo ayudarte?", false);
+
+            const lanValue = document.getElementById("language").value;
+
+            if (lanValue === "es") {
+              addMessage(
+                "¡Hola! Soy AztecaBot 👋, tu asistente para la carrera de Negocios Internacionales en la UDLAP.<br>" +
+                  "Puedo ayudarte con:<br>" +
+                  "- Materias y plan de estudios 📚<br>" +
+                  "- Profesores y contactos 🧑‍🏫<br>" +
+                  "- Prácticas profesionales 💼<br>" +
+                  "- Calendario y eventos 🗓️<br>" +
+                  "Ejemplo: ¿Qué materias se toman en quinto semestre?",
+                false
+              );
+            } else {
+              addMessage(
+                "Hi! I'm AztecaBot 👋, your assistant for the International Business program at UDLAP.<br>" +
+                  "I can help you with:<br>" +
+                  "- Courses and curriculum 📚<br>" +
+                  "- Professors and contacts 🧑‍🏫<br>" +
+                  "- Internships 💼<br>" +
+                  "- Calendar and events 🗓️<br>" +
+                  "Example: What subjects are taken in the fifth semester?",
+                false
+              );
+            }
             menuDropdown.classList.remove("show");
           });
 
-        // Ir a configuración
+        // --- MENÚ: CONFIGURACIÓN / AYUDA / LOGOUT ---
         document
           .getElementById("settings-button")
           .addEventListener("click", function () {
@@ -467,7 +504,6 @@
             menuDropdown.classList.remove("show");
           });
 
-        // Ir a ayuda
         document
           .getElementById("help-button")
           .addEventListener("click", function () {
@@ -475,28 +511,6 @@
             menuDropdown.classList.remove("show");
           });
 
-        // Volver al chat desde ayuda
-        document
-          .getElementById("back-to-chat-from-help-button")
-          .addEventListener("click", function () {
-            showSection("chat-section");
-          });
-
-        // Volver al chat desde configuración
-        document
-          .getElementById("back-to-chat-button")
-          .addEventListener("click", function () {
-            showSection("chat-section");
-          });
-
-        // Guardar configuración
-        document
-          .getElementById("save-button")
-          .addEventListener("click", function () {
-            alert("Configuración guardada.");
-          });
-
-        // Cerrar sesión
         document
           .getElementById("logout-button")
           .addEventListener("click", function () {
@@ -504,14 +518,154 @@
             menuDropdown.classList.remove("show");
           });
 
-        // Función para mostrar una sección y ocultar las demás
-        function showSection(sectionId) {
-          const sections = document.querySelectorAll("section");
-          sections.forEach((section) => {
-            section.style.display = "none";
+        document
+          .getElementById("back-to-chat-from-help-button")
+          .addEventListener("click", function () {
+            showSection("chat-section");
           });
-          document.getElementById(sectionId).style.display = "block";
-        }
+
+        document
+          .getElementById("back-to-chat-button")
+          .addEventListener("click", function () {
+            showSection("chat-section");
+          });
+
+        const helpQuestions = document.querySelectorAll(".help-question");
+        helpQuestions.forEach((question) => {
+          question.addEventListener("click", () => {
+            const text = question.textContent.trim();
+            addMessage(text, true);
+            sendMessageToBackend(text);
+            showSection("chat-section");
+          });
+        });
+
+        // --- CAMBIO DE TEMA ---
+        document
+          .getElementById("theme")
+          .addEventListener("change", function () {
+            const theme = this.value;
+            if (theme === "dark") {
+              document.body.classList.add("dark-theme");
+            } else {
+              document.body.classList.remove("dark-theme");
+            }
+          });
+
+        // --- CAMBIO DE IDIOMA ---
+        const translations = {
+          es: {
+            loginTitle: "Iniciar Sesión",
+            username: "Usuario",
+            password: "Contraseña",
+            loginButton: "Iniciar Sesión",
+            botIntro:
+              "¡Hola! Soy AztecaBot 👋, tu asistente para la carrera de Negocios Internacionales en la UDLAP.<br>Puedo ayudarte con:<br>- Materias y plan de estudios 📚<br>- Profesores y contactos 🧑‍🏫<br>- Prácticas profesionales 💼<br>- Calendario y eventos 🗓️<br>Ejemplo: ¿Qué materias se toman en quinto semestre?",
+            helpTitle: "Ayuda",
+            settingsTitle: "Configuración",
+            backButton: "Volver al Chat",
+            inputMessage: "Escribe tu mensaje aquí...",
+            menuSettings: "Configuración",
+            settingsTheme: "Tema",
+            themeLight: "Claro",
+            themeDark: "Oscuro",
+            settingsLan: "Idioma",
+            lanSpa: "Español",
+            lanEng: "Inglés",
+            menuHelp: "Ayuda",
+            helpQ1: "¿Qué materias debo llevar este semestre?",
+            helpQ2: "¿Cuál es el horario de la materia de Matemáticas?",
+            helpQ3: "¿Cómo puedo inscribirme a una materia?",
+            helpQ4: "¿Dónde puedo ver mis calificaciones?",
+            helpQ5: "¿Cómo contacto a mi profesor?",
+            menuClear: "Vaciar Chat",
+            menuLogout: "Cerrar Sesión",
+          },
+          en: {
+            loginTitle: "Log In",
+            username: "Username",
+            password: "Password",
+            loginButton: "Log In",
+            botIntro:
+              "Hi! I'm AztecaBot 👋, your assistant for the International Business program at UDLAP.<br>I can help you with:<br>- Courses and curriculum 📚<br>- Professors and contacts 🧑‍🏫<br>- Internships 💼<br>- Calendar and events 🗓️<br>Example: What subjects are taken in the fifth semester?",
+            helpTitle: "Help",
+            settingsTitle: "Settings",
+            backButton: "Back to Chat",
+            inputMessage: "Write your message here...",
+            menuSettings: "Settings",
+            settingsTheme: "Theme",
+            themeLight: "Light",
+            themeDark: "Dark",
+            settingsLan: "Language",
+            lanSpa: "Spanish",
+            lanEng: "English",
+            menuHelp: "Help",
+            helpQ1: "What courses should I take this semester?",
+            helpQ2: "What is the schedule for the Mathematics course?",
+            helpQ3: "How can I enroll in a course?",
+            helpQ4: "Where can I check my grades?",
+            helpQ5: "How do I contact my professor?",
+            menuClear: "Clear Chat",
+            menuLogout: "Log Out",
+          },
+        };
+
+        document
+          .getElementById("language")
+          .addEventListener("change", function () {
+            const lang = this.value;
+            const t = translations[lang];
+            document.querySelector(".login-header").textContent = t.loginTitle;
+            document.getElementById("username").placeholder = t.username;
+            document.getElementById("password").placeholder = t.password;
+            document.getElementById("login-button").textContent = t.loginButton;
+            document.querySelector(".help-header").textContent = t.helpTitle;
+            document.querySelector(".settings-header").textContent =
+              t.settingsTitle;
+            document.getElementById("back-to-chat-button").textContent =
+              t.backButton;
+            document.getElementById(
+              "back-to-chat-from-help-button"
+            ).textContent = t.backButton;
+            document.getElementById("message-input").placeholder =
+              t.inputMessage;
+            document.getElementById("settings-button").textContent =
+              t.menuSettings;
+            document.querySelector('label[for = "theme"]').textContent =
+              t.settingsTheme;
+            document.querySelector(
+              '#theme option[value = "light"]'
+            ).textContent = t.themeLight;
+            document.querySelector(
+              '#theme option[value = "dark"]'
+            ).textContent = t.themeDark;
+            document.querySelector('label[for = "language"]').textContent =
+              t.settingsLan;
+            document.querySelector(
+              '#language option[value = "es"]'
+            ).textContent = t.lanSpa;
+            document.querySelector(
+              '#language option[value = "en"]'
+            ).textContent = t.lanEng;
+            document.getElementById("help-button").textContent = t.menuHelp;
+            document.querySelectorAll(".help-question")[0].textContent =
+              t.helpQ1;
+            document.querySelectorAll(".help-question")[1].textContent =
+              t.helpQ2;
+            document.querySelectorAll(".help-question")[2].textContent =
+              t.helpQ3;
+            document.querySelectorAll(".help-question")[3].textContent =
+              t.helpQ4;
+            document.querySelectorAll(".help-question")[4].textContent =
+              t.helpQ5;
+            document.getElementById("clear-chat-button").textContent =
+              t.menuClear;
+            document.getElementById("logout-button").textContent = t.menuLogout;
+            const firstBotMessage = document.querySelector(
+              "#chat-messages .bot-message:first-child"
+            );
+            if (firstBotMessage) firstBotMessage.innerHTML = t.botIntro;
+          });
       });
     </script>
   </body>
