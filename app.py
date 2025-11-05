@@ -12,7 +12,7 @@ import pytz
 # NOTA: Por seguridad, hemos reemplazado tu clave API real con un placeholder.
 # Usar una variable de entorno es la mejor práctica para proteger tu clave.
 client = Groq(
-     api_key="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"  # reemplaza con tu key
+     api_key="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"  # reemplaza con tu key
 )
 
 # ==============================
